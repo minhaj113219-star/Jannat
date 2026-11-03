@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0f172a"
+    android:padding="20dp">
+
+    <!-- Top Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@mipmap/ic_launcher"
+            android:background="@drawable/circle_bg" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="জান্নাত AI (JANNAT AI)"
+                android:textColor="#38bdf8"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="অনলাইন • এআই কম্প্যানিয়ন ও ডেভেলপার"
+                android:textColor="#94a3b8"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Chat/Output Screen Area -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#1e293b"
+        android:padding="15dp"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:id="@+id/chatOutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="জি, বলো মিনহাজ ভাই! আমি শুনছি। ❤️\nআজ আপনাকে কীভাবে সাহায্য করতে পারি?"
+            android:textColor="#f8fafc"
+            android:textSize="16sp"
+            android:lineSpacingExtra="6dp" />
+    </ScrollView>
+
+    <!-- Bottom Input & Control Panel -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/userInput"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="#1e293b"
+            android:hint="এখানে আপনার প্রম্পট লিখুন..."
+            android:textColor="#fff"
+            android:textColorHint="#64748b"
+            android:paddingHorizontal="15dp"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/sendBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="পাঠাও"
+            android:backgroundTint="#38bdf8"
+            android:textColor="#0f172a"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>
