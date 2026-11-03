@@ -1,0 +1,54 @@
+package com.jannatai.assistant
+
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var userInput: EditText
+    private lateinit var sendBtn: Button
+    private lateinit var chatOutput: TextView
+    private val jannatEngine = JannatCoreEngine()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        userInput = findViewById(R.id.userInput)
+        sendBtn = findViewById(R.id.sendBtn)
+        chatOutput = findViewById(R.id.chatOutput)
+
+        sendBtn.setOnClickListener {
+            val query = userInput.text.toString().trim()
+            if (query.isNotEmpty()) {
+                appendChat("মিনহাজ: $query")
+                processJannatIntelligence(query)
+                userInput.text.clear()
+            }
+        }
+    }
+
+    private fun processJannatIntelligence(prompt: String) {
+        // Unified 3-in-1 Intelligence Engine Routing
+        val response = when {
+            prompt.contains("কোড", true) || prompt.contains("code", true) || prompt.contains("app", true) -> {
+                jannatEngine.developerMode(prompt)
+            }
+            prompt.contains("কেমন আছো", true) || prompt.contains("ভালোবাসা", true) -> {
+                jannatEngine.companionMode(prompt)
+            }
+            else -> {
+                jannatEngine.assistantMode(prompt)
+            }
+        }
+        appendChat("জান্নাত: $response")
+    }
+
+    private fun appendChat(message: String) {
+        val currentText = chatOutput.text.toString()
+        chatOutput.text = "$currentText\n\n$message"
+    }
+}
