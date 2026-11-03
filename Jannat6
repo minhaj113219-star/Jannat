@@ -1,0 +1,6 @@
+git init
+git add .
+git commit -m "Jannat AI initial core architecture implementation"
+git branch -M main
+git remote add origin আপনার_গিটহাব_রিপোজিটরি_লিংক
+git push -u origin main
