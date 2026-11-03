@@ -1,0 +1,20 @@
+JannatAI/
+├── app/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/com/jannatai/assistant/
+│   │   │   │   ├── MainActivity.kt
+│   │   │   │   ├── JannatCoreEngine.kt
+│   │   │   │   └── DeveloperStudioActivity.kt
+│   │   │   ├── res/
+│   │   │   │   ├── layout/
+│   │   │   │   │   ├── activity_main.xml
+│   │   │   │   │   └── activity_developer.xml
+│   │   │   │   └── values/
+│   │   │   │       ├── strings.xml
+│   │   │   │       ├── colors.xml
+│   │   │   │       └── themes.xml
+│   │   │   └── AndroidManifest.xml
+│   │   └── build.gradle
+│   └── build.gradle
+└── settings.gradle
